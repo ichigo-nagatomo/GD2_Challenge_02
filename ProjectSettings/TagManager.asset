@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerCore
   - Ground
+  - Wall
+  - Gun
   layers:
   - Default
   - TransparentFX
