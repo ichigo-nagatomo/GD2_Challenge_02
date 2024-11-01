@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour {
     [SerializeField] private LineRenderer lineRenderer;  // LineRenderer‚ÌQÆ‚ğ’Ç‰Á
 
     private float speed = 50f;  // ’e‚Ì‘¬“x
-    private float lifetime = 5f; // ’e‚Ìõ–½i•b”j
+    private float lifetime = 1f; // ’e‚Ìõ–½i•b”j
 
     // Start is called before the first frame update
     void Start() {
