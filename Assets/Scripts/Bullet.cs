@@ -7,12 +7,16 @@ public class Bullet : MonoBehaviour {
     [SerializeField] private LineRenderer lineRenderer;  // LineRendererの参照を追加
 
     private float speed = 50f;  // 弾の速度
+    private float lifetime = 5f; // 弾の寿命（秒数）
 
     // Start is called before the first frame update
     void Start() {
         // 初期状態でLineRendererのポイントをセット
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, endPoint); // 開始位置で初期化
+
+        // 指定された寿命が過ぎたら弾を破壊
+        Destroy(gameObject, lifetime);
     }
 
     // Update is called once per frame
