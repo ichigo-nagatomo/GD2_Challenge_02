@@ -8,11 +8,18 @@ TagManager:
   - Ground
   - Wall
   - Gun
+  - Button
+  - Enemy
+  - EnemyCore
+  - Gun2
+  - Gun3
+  - Bullet
+  - Bomb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grenade
   - Water
   - UI
   - 
