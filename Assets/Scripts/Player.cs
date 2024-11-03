@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
 
         // ËŒ‚ˆ—
         if (Input.GetMouseButton(0) && gun != null) {
+            gun.GunDir(); // Œü‚«‚ğİ’è
             gun.Shoot(); // ¶ƒNƒŠƒbƒN‚ÅËŒ‚
         }
 
@@ -48,7 +49,6 @@ public class Player : MonoBehaviour {
 
             gun = other.gameObject.GetComponent<Gun>();
             if (gun != null) {
-                gun.GunDir();
                 AttachGunToHand(other.gameObject);
                 Debug.Log("e‚ª³í‚Éæ“¾‚³‚ê‚Ü‚µ‚½: " + gun.GetType().Name);
             } else {
