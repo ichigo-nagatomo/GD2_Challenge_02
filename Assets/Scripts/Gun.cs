@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Palmmedia.ReportGenerator.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class Gun : MonoBehaviour
     // 射撃のクールダウン時間
     [SerializeField] protected float fireRate = 0.5f; // 発射レート（秒）
     protected float nextFireTime = 0f; // 次に発射可能な時間
-
+    public LayerMask groundLayer; // 地面用のレイヤーマスク
     // Start is called before the first frame update
     void Start() {
 
@@ -60,11 +61,17 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public void GunDir() {
+    public void GunDir(float height) {
         // 銃口がマウスの方に向く
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out rayCastHit)) {
-            transform.LookAt(new Vector3(rayCastHit.point.x, transform.position.y, rayCastHit.point.z));
+        if (Physics.Raycast(ray, out rayCastHit, Mathf.Infinity, groundLayer)) {
+            Vector3 v = ray.direction * -1;
+            Vector3 h = new Vector3(0, height, 0);
+            float r = Mathf.Acos(Vector3.Dot(v, h));
+            float s = height / Mathf.Cos(r);
+            Vector3 lookPoint = rayCastHit.point + v * s;
+
+            transform.LookAt(new Vector3(lookPoint.x, lookPoint.y, lookPoint.z));
         }
     }
 }

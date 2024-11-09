@@ -10216,9 +10216,9 @@ GameObject:
   - component: {fileID: 680538405}
   - component: {fileID: 680538404}
   - component: {fileID: 680538403}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
-  m_TagString: GameController
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17697,6 +17697,9 @@ MonoBehaviour:
   muzzle: {fileID: 1046063900}
   bullets: {fileID: -7149942611897758023, guid: b08659f47cdf89f4fa031efcef850370, type: 3}
   fireRate: 0.5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &1316957155
 Transform:
   m_ObjectHideFlags: 0
@@ -20940,6 +20943,9 @@ MonoBehaviour:
   muzzle: {fileID: 1000424010}
   bullets: {fileID: -7149942611897758023, guid: b08659f47cdf89f4fa031efcef850370, type: 3}
   fireRate: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   GrenadeBulletPrefab: {fileID: 597239715201704318, guid: 0d812691f791c0f4dae183675c3e403b, type: 3}
   fireGrenadeRate: 0.5
 --- !u!135 &1501618102
@@ -22401,6 +22407,9 @@ MonoBehaviour:
   muzzle: {fileID: 1485424709}
   bullets: {fileID: -7149942611897758023, guid: b08659f47cdf89f4fa031efcef850370, type: 3}
   fireRate: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!135 &1605878173
 SphereCollider:
   m_ObjectHideFlags: 0

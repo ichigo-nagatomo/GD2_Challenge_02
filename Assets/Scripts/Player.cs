@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
 
         // ËŒ‚ˆ—
         if (Input.GetMouseButton(0) && gun != null) {
-            gun.GunDir(); // Œü‚«‚ğİ’è
+            gun.GunDir(transform.position.y); // Œü‚«‚ğİ’è
             gun.Shoot(); // ¶ƒNƒŠƒbƒN‚ÅËŒ‚
         }
 
